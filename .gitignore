@@ -3,3 +3,4 @@
 *.txt
 *.xls
 *.xlsx
+.ipynb_checkpoints/*
