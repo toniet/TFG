@@ -1,6 +1,6 @@
 *.csv
 *.pdf
-*.txt
+data/*.txt
 *.xls
 *.xlsx
 .ipynb_checkpoints/*
