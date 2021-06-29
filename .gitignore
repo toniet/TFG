@@ -1,7 +1,9 @@
 *.csv
 *.pdf
 data/*.txt
+data/*.xlsx
 *.xls
 *.xlsx
 .ipynb_checkpoints/*
 df_*
+*.pkl
