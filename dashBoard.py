@@ -4,7 +4,22 @@ import streamlit as st
 
 
 def my_widget(key):
-    st.subheader('Datos Campaña')
+    st.subheader('Carga de datos')
+    #Carga datos Agencia 4800
+    data_file = st.file_uploader("Agencia 4800",type=['xlsx'])
+    if data_file is not None:
+        file_details = {"Filename":data_file.name,"FileType":data_file.type,"FileSize":data_file.size}
+        st.write(file_details)
+        df = pd.read_excel(data_file)
+        st.dataframe(df)
+        
+    #Carga datos Agencia 4802
+    data_file = st.file_uploader("Agencia 4802",type=['xlsx'])
+    if data_file is not None:
+        file_details = {"Filename":data_file.name,"FileType":data_file.type,"FileSize":data_file.size}
+        st.write(file_details)
+        df = pd.read_excel(data_file)
+        st.dataframe(df)
     
 st.header('Predicción llamadas contact center')
 

@@ -1,10 +1,8 @@
-def getCallData():
+def getCallData(password):
     server = 'khcuy9chlt.database.windows.net' 
     bdd = 'ASERTEC' 
     user = 'tecnico@khcuy9chlt' 
-    password = 'Abc80585359'
-    
-    ficheroCSV = 'calls.csv'
+    #password = 'xxxxxxxxxxxx'
 
     query = 'SELECT [IDCAMPANYA] \
           ,[IDSUJETO] \
