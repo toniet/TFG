@@ -1,3 +1,11 @@
+import pandas as pd
+import numpy as np
+import pyodbc
+import calendar
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import StandardScaler
+import pickle
+
 def getCallData(password):
     server = 'khcuy9chlt.database.windows.net' 
     bdd = 'ASERTEC' 
