@@ -12,6 +12,8 @@ from  functionsTFM import dataScaler
 from  functionsTFM import dataPredict
 from  functionsTFM import getTendencia
 
+#st.set_page_config(layout="wide")
+
 def my_widget():
     global session_state
     
@@ -88,33 +90,38 @@ diasesp = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes']
 dia = dias[dtoday.weekday()]
 diaesp = diasesp[dtoday.weekday()]
 
-st.header('Información relativa a la campaña')
+st.write('# Información relativa a la campaña')
 
 df_info = pd.read_pickle('./data/df_data')
 df_info = df_info[['Fecha', 'envios', 'llamadas']][df_info[dia]==1]
 
-container = st.beta_container()
-columna1, columna2 = container.beta_columns(2)
-#st.set_page_config(layout="wide")
+containerA = st.beta_container()
+columnaA1, columnaA2 = containerA.beta_columns(2)
 
-columna1.pyplot(getTendencia(df_info['llamadas'], 'Distribucion de llamadas en ' + diaesp, 'gray' ))
-columna2.pyplot(getTendencia(df_info['envios'], 'Distribucion de envios en ' + diaesp, 'green'))
-st.write('##### La media de llamadas en ' + diaesp + ' es: ' + str(df_info['llamadas'].mean().round(2)) + ' y la media de envios es: ' + str(df_info['envios'].mean().round(2)))
+columnaA1.pyplot(getTendencia(df_info['llamadas'], 'Distribucion de llamadas en ' + diaesp, 'gray'))
+columnaA2.pyplot(getTendencia(df_info['envios'], 'Distribucion de envios en ' + diaesp, 'green'))
+
+containerB = st.beta_container()
+columnaB1, columnaB2 = containerB.beta_columns(2)
+
+columnaB1.write('##### La media de llamadas en ' + diaesp + ' es: ' + str(df_info['llamadas'].mean().round(2)) + ' y una desviación de: ' + str(df_info['llamadas'].std().round(2)) )
+columnaB2.write('##### La media de envios en ' + diaesp + ' es: ' + str(df_info['envios'].mean().round(2)) + ' y una desviación de: ' + str(df_info['envios'].std().round(2))  )
 
 if (session_state.todas):
-    st.header('Predicción llamadas contact center')
+    st.write('# Predicción llamadas contact center')
     
-    df_calls = getCallData('xxxxxxxxxx')
+    df_calls = getCallData('xxxxxxxxxxxx')
     df_shippings = getDataEnvios(session_state.df_shipping)
     print('Haciendo join de los datos')
     df = dataJoin(df_calls, df_shippings)
     print('Haciendo dataengineering')
-    df = dataEngineering(df)
+    df, fecha, totalEnvios = dataEngineering(df)
     print('Normalizando datos')
     df = dataScaler(df)
     prediction = dataPredict(df)
     
-    st.write('El dia ' + str(dtoday.day) + '/' + str(dtoday.month) + '/' + str(dtoday.year) + ' se esperan: ' + str(prediction) + ' llamadas')
+    st.write('Para el dia ' + str(fecha) + ' se recibirá un total de ' + str(totalEnvios) + ' envios y se preveen un total de ' + str(prediction) + ' llamadas')
+    # st.write('El dia ' + str(dtoday.day) + '/' + str(dtoday.month) + '/' + str(dtoday.year) + ' se esperan: ' + str(prediction) + ' llamadas')
 
 with st.sidebar:
     clicked = my_widget()

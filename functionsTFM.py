@@ -137,12 +137,14 @@ def dataEngineering(df):
     
     df.dropna(inplace=True)
     
-    df  = df.tail(1).iloc[:,1:-1]
+    fecha = df.tail(1).iloc[0]['Fecha']
+    df = df.tail(1).iloc[:,1:-1]
+    envios = df.iloc[0]['envios']
     
     df.reset_index(inplace=True)
     df.drop('index', axis='columns', inplace=True)
     
-    return df
+    return df, fecha, envios
 
 def dataScaler(df):
     # Cargar scaler desde Pickle
