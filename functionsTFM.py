@@ -5,6 +5,8 @@ import calendar
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import StandardScaler
 import pickle
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 def getCallData(password):
     server = 'khcuy9chlt.database.windows.net' 
@@ -161,3 +163,12 @@ def dataPredict(data):
     predict = regl.predict(data)
     
     return predict
+
+def getTendencia(data, titulo, color):
+    a4_dims = (4, 5)
+    fig, ax = plt.subplots(figsize=a4_dims)
+    ax.set_title(titulo)
+    sns.boxplot(ax=ax, x=data, color=color)
+    fig.tight_layout()
+    
+    return fig

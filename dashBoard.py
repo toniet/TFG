@@ -3,12 +3,14 @@ import pandas as pd
 import streamlit as st
 import SessionState
 import datetime
+import calendar
 from  functionsTFM import getCallData
 from  functionsTFM import getDataEnvios
 from  functionsTFM import dataJoin
 from  functionsTFM import dataEngineering
 from  functionsTFM import dataScaler
 from  functionsTFM import dataPredict
+from  functionsTFM import getTendencia
 
 def my_widget():
     global session_state
@@ -80,10 +82,24 @@ session_state = SessionState.get(df4800 = pd.DataFrame(),
                                  df_shipping = pd.DataFrame(),
                                  todas=False)
 
-dt = datetime.datetime.today()
+dtoday = datetime.datetime.today()
+dias = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+diasesp = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes']
+dia = dias[dtoday.weekday()]
+diaesp = diasesp[dtoday.weekday()]
 
-st.header('Información campaña')
-st.dataframe(session_state.df_shipping)  
+st.header('Información relativa a la campaña')
+
+df_info = pd.read_pickle('./data/df_data')
+df_info = df_info[['Fecha', 'envios', 'llamadas']][df_info[dia]==1]
+
+container = st.beta_container()
+columna1, columna2 = container.beta_columns(2)
+#st.set_page_config(layout="wide")
+
+columna1.pyplot(getTendencia(df_info['llamadas'], 'Distribucion de llamadas en ' + diaesp, 'gray' ))
+columna2.pyplot(getTendencia(df_info['envios'], 'Distribucion de envios en ' + diaesp, 'green'))
+st.write('##### La media de llamadas en ' + diaesp + ' es: ' + str(df_info['llamadas'].mean().round(2)) + ' y la media de envios es: ' + str(df_info['envios'].mean().round(2)))
 
 if (session_state.todas):
     st.header('Predicción llamadas contact center')
@@ -97,12 +113,8 @@ if (session_state.todas):
     print('Normalizando datos')
     df = dataScaler(df)
     prediction = dataPredict(df)
-
-    st.write('El dia ' + str(dt.day) + '/' + str(dt.month) + '/' + str(dt.year) + ' se esperan: ' + str(prediction) + ' llamadas')
-
-#container = st.beta_container()
-#columna1, columna2, columna3 = container.beta_columns(3)
-#st.set_page_config(layout="wide")
+    
+    st.write('El dia ' + str(dtoday.day) + '/' + str(dtoday.month) + '/' + str(dtoday.year) + ' se esperan: ' + str(prediction) + ' llamadas')
 
 with st.sidebar:
     clicked = my_widget()
