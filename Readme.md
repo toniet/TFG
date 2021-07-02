@@ -105,14 +105,28 @@ El repositorio cuenta con los siguientes notebooks:
 - CCT\_Festivos\_ARIMA.ipynb
 - CCT\_Festivos\_Exogenas\_SARIMAX.ipynb
 
-En este repositorio también encontramos 3 librerias .py:
+
+Cada notebook, en su nombre, tiene un numero que indica su orden para procesarlos.
+
+En este repositorio también encontramos 2 librerias .py:
 - functionsTFM.py, donde se encuentran funciones de usuario para no tener el codigo sucio
 - SessionState.py, una librería para poder trabajar con la cache de navegador en Streamlit 
 
 Y por supesto el fichero .py donde se ejecuta el cuadro de mando de Streamlit
 - dashBoard.py
 
-Cada notebook, en su nombre, tiene un numero que indica su orden para procesarlos.
+Para ejecutar el dashboard, se realizará de la siguiente forma: 
+streamlit run dashBoard.py
+
 
 ### Manual para cuadro de mando
+La disposición del cuadro de mando es de la siguiente manera:
 ![imagen](images/dashboard.JPG)
+Tenemos un panel lateral donde se podran subir los ficheros con los datos de los envios
+![imagen](images/barra.JPG)
+En la parte central tenemos informacion de las distribuciones de los envios y de las llamadas de nuestro set de datos, para los que
+está entrenado el modelo
+![imagen](images/panel_info.JPG)
+Una vez cargado los ficheros, el propio dashboard hace una llamada SQL y carga los datos de las llamadas, y tras el procesamiento de
+la información, hace la predicción de llamadas para el día en el cual se han cargado los datos.
+![imagen](images/panel_predict.JPG)
