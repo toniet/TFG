@@ -1,26 +1,14 @@
 ﻿# Contenido
-[Predicción número de llamadas en un servicio de Contact center	 PAGEREF _Toc74381127 \h 2]
-
-[Introducción]
-
-[Objetivo]
-
-[Fuentes de datos]
-
-[Diccionario de datos]
-
-[Datos de envíos]
-
-[Datos de llamadas]
-
-[Instrucciones para replicar proyecto]
-
-[Librerías y Requerimientos]
-
-[Ejecución de Notebooks]
-
-
-
+- Predicción número de llamadas en un servicio de Contact center
+- Introducción
+- Objetivo
+- Fuentes de datos
+- Diccionario de datos
+- Datos de envíos
+- Datos de llamadas
+- Instrucciones para replicar proyecto
+- Librerías y Requerimientos
+- Ejecución de Notebooks
 
 # Predicción número de llamadas en un servicio de Contact center
 
