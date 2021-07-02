@@ -1,5 +1,4 @@
 ﻿# Contenido
-- Predicción número de llamadas en un servicio de Contact center
 - Introducción
 - Objetivo
 - Fuentes de datos
@@ -10,7 +9,7 @@
 - Librerías y Requerimientos
 - Ejecución de Notebooks
 
-# Predicción número de llamadas en un servicio de Contact center
+# Predicción número de llamadas en un servicio de Contact Center
 
 ## Introducción
 Las empresas de mensajería tienen un gran volumen de llamadas telefónicas, se podría decir que el 90% de los envíos que se realizan por particulares son a través de una llamada telefónica.
