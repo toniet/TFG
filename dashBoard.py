@@ -110,7 +110,7 @@ columnaB2.write('##### La media de envios en ' + diaesp + ' es: ' + str(df_info[
 if (session_state.todas):
     st.write('# Predicción llamadas contact center')
     
-    df_calls = getCallData('xxxxxxxxxxxx')
+    df_calls = getCallData('xxxxxxxxxx')
     df_shippings = getDataEnvios(session_state.df_shipping)
     print('Haciendo join de los datos')
     df = dataJoin(df_calls, df_shippings)
@@ -120,7 +120,11 @@ if (session_state.todas):
     df = dataScaler(df)
     prediction = dataPredict(df)
     
-    st.write('Para el dia ' + str(fecha) + ' se recibirá un total de ' + str(totalEnvios) + ' envios y se preveen un total de ' + str(prediction) + ' llamadas')
+    fecha = '**_ '+ str(fecha) +' _**'
+    totalEnvios = '**_ '+ str(int(totalEnvios.round(0))) +' _**'
+    prediction = '**_ '+ str(int(prediction.round(0))) +' _**'
+    
+    st.write('Para el dia ' + fecha + ' se recibirá un total de '+ totalEnvios + ' envios y se preveen un total de ' + prediction + ' llamadas')
     # st.write('El dia ' + str(dtoday.day) + '/' + str(dtoday.month) + '/' + str(dtoday.year) + ' se esperan: ' + str(prediction) + ' llamadas')
 
 with st.sidebar:
