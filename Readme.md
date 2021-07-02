@@ -90,7 +90,7 @@ Con sus correspondientes dependencias.
 
 En el repositorio existe un fichero llamado “Requerimientos.txt” extraído del comando pip freeze, para poder realizar la instalación de todos los paquetes con sus correspondientes versiones y de esta forma, replicar el entorno de desarrollo.
 
-Para ejecutar el dashBoard de streamlit, será necesario tener el “Microsoft® ODBC Driver 17 for SQL Server” descargable desde la página de Microsoft, [enlace](https://www.microsoft.com/es-es/download/details.aspx?id=56567)
+Para ejecutar el dashBoard.py de streamlit, será necesario tener el “Microsoft® ODBC Driver 17 for SQL Server” descargable desde la página de Microsoft, [enlace](https://www.microsoft.com/es-es/download/details.aspx?id=56567) y la contraseña de la conexión, ya que una de las fuentes de datos se consulta en una Base de Datos SQL en Azure.
 ### Ejecución de Notebooks
 El repositorio cuenta con los siguientes notebooks:
 
@@ -100,8 +100,16 @@ El repositorio cuenta con los siguientes notebooks:
 - 3\_AnalisisData.ipynb
 - 3\_newAnalisisData.ipynb
 - 4\_Model.ipynb
+- 5\_DashBoard_TFM.ipynb
 - CCT\_ARIMA.ipynb
 - CCT\_Festivos\_ARIMA.ipynb
 - CCT\_Festivos\_Exogenas\_SARIMAX.ipynb
+
+En este repositorio también encontramos 3 librerias .py:
+- functionsTFM.py, donde se encuentran funciones de usuario para no tener el codigo sucio
+- SessionState.py, una librería para poder trabajar con la cache de navegador en Streamlit 
+
+Y por supesto el fichero .py donde se ejecuta el cuadro de mando de Streamlit
+- dashBoard.py
 
 Cada notebook, en su nombre, tiene un numero que indica su orden para procesarlos.
