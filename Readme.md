@@ -113,3 +113,5 @@ Y por supesto el fichero .py donde se ejecuta el cuadro de mando de Streamlit
 - dashBoard.py
 
 Cada notebook, en su nombre, tiene un numero que indica su orden para procesarlos.
+
+### Manual para cuadro de mando
