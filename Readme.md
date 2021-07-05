@@ -32,7 +32,7 @@ Predecir la cantidad de llamadas que recibirá “mañana” esta campaña, apli
 Para realizar este estudio tenemos dos fuentes de datos. 
 
 - Los envíos que llegan a las diferentes oficinas de transporte, que nos facilita el sistema informático de la marca a través de sus listados en Excel. 
-- El histórico de llamadas de esa campaña desde el propio departamento de Contac center.
+- El histórico de llamadas de esa campaña desde el propio departamento de Contact center.
 ## Diccionario de datos
 ### Datos de envíos
 Los datos referentes a los envíos de las oficinas de transporte son:
@@ -88,7 +88,7 @@ El proyecto se ha realizado en un entorno virtual de Python 3.9.5, las principal
 
 Con sus correspondientes dependencias. 
 
-En el repositorio existe un fichero llamado “Requerimientos.txt” extraído del comando pip freeze, para poder realizar la instalación de todos los paquetes con sus correspondientes versiones y de esta forma, replicar el entorno de desarrollo.
+En el repositorio existe un fichero llamado “Requerimientos.txt” extraído del comando pip freeze, para poder realizar la instalación de todos los paquetes con sus correspondientes versiones y de esta forma, replicar el entorno de desarrollo. (pip install -r Requerimientos.txt)
 
 Para ejecutar el dashBoard.py de streamlit, será necesario tener el “Microsoft® ODBC Driver 17 for SQL Server” descargable desde la página de Microsoft, [enlace](https://www.microsoft.com/es-es/download/details.aspx?id=56567) y la contraseña de la conexión, ya que una de las fuentes de datos se consulta en una Base de Datos SQL en Azure.
 ### Ejecución de Notebooks
@@ -106,7 +106,7 @@ El repositorio cuenta con los siguientes notebooks:
 - CCT\_Festivos\_Exogenas\_SARIMAX.ipynb
 
 
-Cada notebook, en su nombre, tiene un numero que indica su orden para procesarlos.
+Cada notebook, en su nombre, tiene un número que indica su orden para procesarlos.
 
 En este repositorio también encontramos 2 librerias .py:
 - functionsTFM.py, donde se encuentran funciones de usuario para no tener el codigo sucio
@@ -120,6 +120,9 @@ streamlit run dashBoard.py
 
 
 ### Manual para cuadro de mando
+El cuadro de mando es una webApp donde, cargando los ficheros de los envios que se van a recibir en las oficinas, se 
+realiza una prediccion de la cantidad de llamadas que se va a recibir en el departamento de Contact Center.
+
 La disposición del cuadro de mando es de la siguiente manera:
 ![imagen](images/dashboard.JPG)
 
