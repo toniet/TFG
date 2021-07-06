@@ -75,7 +75,7 @@ Los datos referentes a las llamadas telefónicas que recibe el contact center so
 El único dato que no vamos a utilizar es el número de teléfono 
 ## Instrucciones para replicar proyecto
 ### Librerías y Requerimientos
-El proyecto se ha realizado en un entorno virtual de Python 3.9.5, las principales librerías utilizadas son:
+El proyecto se ha realizado en un entorno virtual de Python 3.9.5, el proyecto funciona igualmente en Windows como en UNIX, las principales librerías utilizadas son:
 
 - numpy==1.19.5
 - pandas==1.2.4
