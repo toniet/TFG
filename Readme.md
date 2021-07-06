@@ -129,7 +129,8 @@ está entrenado el modelo
 
 ![imagen](images/panel_info.JPG)
 
-Una vez cargado los ficheros, el propio dashboard hace una llamada SQL y carga los datos de las llamadas, y tras el procesamiento de
-la información, hace la predicción de llamadas para el día en el cual se han cargado los datos.
+Una vez cargado los ficheros de los envíos, el propio dashboard hace una llamada SQL (los datos de conexión SQL no se proporcionan en el repo) 
+para la carga de los datos de las llamadas, y tras el procesamiento de la información, hace la predicción de llamadas para 
+el día en el cual se han cargado los datos.
 
 ![imagen](images/panel_predict.JPG)
