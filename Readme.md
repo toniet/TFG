@@ -100,7 +100,7 @@ El repositorio cuenta con los siguientes notebooks:
 - 4\_Model.ipynb
 - 5\_DashBoard_TFM.ipynb
 
-Cada notebook, en su nombre, tiene un número que indica su orden para procesarlos.
+Cada notebook, en su nombre, tiene un número que indica su orden para procesarlos. En la raiz de los notebooks debe existir una carpeta data, donde estaran los ficheros de datos
 
 En este repositorio también encontramos 2 librerias .py:
 - functionsTFM.py, donde se encuentran funciones de usuario para no tener el codigo sucio
