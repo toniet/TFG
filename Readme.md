@@ -120,7 +120,7 @@ realiza una prediccion de la cantidad de llamadas que se va a recibir en el depa
 La disposición del cuadro de mando es de la siguiente manera:
 ![imagen](images/dashboard.JPG)
 
-Tenemos un panel lateral donde se podran subir los ficheros con los datos de los envios
+Tenemos un panel lateral donde se podran subir los ficheros con los datos de los envios (No se adjuntan en el repo)
 
 ![imagen](images/barra.JPG)
 
