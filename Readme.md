@@ -96,15 +96,9 @@ El repositorio cuenta con los siguientes notebooks:
 
 - 1\_CargaDataEnvios.ipynb
 - 2\_CargaDataCall.ipynb
-- 2\_NewCargaDataCall.ipynb
 - 3\_AnalisisData.ipynb
-- 3\_newAnalisisData.ipynb
 - 4\_Model.ipynb
 - 5\_DashBoard_TFM.ipynb
-- CCT\_ARIMA.ipynb
-- CCT\_Festivos\_ARIMA.ipynb
-- CCT\_Festivos\_Exogenas\_SARIMAX.ipynb
-
 
 Cada notebook, en su nombre, tiene un número que indica su orden para procesarlos.
 
