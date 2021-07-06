@@ -49,7 +49,7 @@ def getCallData(password):
 
 def getDataEnvios(df):
     df = df.iloc[:, [0,4,15]]
-    df['Fecha envío'] = pd.to_datetime(df['Fecha envío'])
+    df['Fecha envío'] = pd.to_datetime(df['Fecha envío'], dayfirst=True)
     dias = list(calendar.day_name)
     df['dayofweek'] = [dias[numero] for numero in df['Fecha envío'].dt.dayofweek]
     df['Fecha envío'] =  pd.to_datetime(df['Fecha envío']).astype('str')
