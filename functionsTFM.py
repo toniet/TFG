@@ -8,19 +8,28 @@ import pickle
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-def getCallData(password):
+def getCallData():
     server = 'khcuy9chlt.database.windows.net' 
     bdd = 'ASERTEC' 
-    user = 'tecnico@khcuy9chlt' 
-    #password = 'xxxxxxxxxxxx'
+    user = 'tecnico@khcuy9chlt'
+    
+    path_pass = 'data/pass.csv'
+    try:
+        df_pass = pd.read_csv(path_pass)
+        password = df_pass.iloc[0,0]
+    except:
+        print('No hay fichero para cargar')
+        password = 'null'
+        
+    fecha = '06/07/2021'
 
     query = 'SELECT [IDCAMPANYA] \
           ,[IDSUJETO] \
           ,[VALOR] \
           ,[DATACREACIO] \
         FROM [dbo].[T_CCT_ALISYS_DATOSCLIENTE] \
-        WHERE DATACREACIO IS NOT NULL AND DATACREACIO > GETDATE()-15 AND CLAVE = \'LLamadaTipoServicio\''
-
+        WHERE DATACREACIO IS NOT NULL AND DATACREACIO > DATEADD(DAY,-15,\'' + fecha + '\' ) AND CLAVE = \'LLamadaTipoServicio\''
+    print(query)
     conn = pyodbc.connect(driver='{ODBC Driver 17 for SQL Server}',server='tcp:khcuy9chlt.database.windows.net,1433',database=bdd, uid=user, pwd=password)
 
     df = pd.read_sql_query(query, conn)

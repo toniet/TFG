@@ -90,7 +90,7 @@ diasesp = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes']
 dia = dias[dtoday.weekday()]
 diaesp = diasesp[dtoday.weekday()]
 
-st.write('# Información relativa a la campaña')
+st.write('# Información relativa a la campaña en el día de hoy')
 
 df_info = pd.read_pickle('./data/df_data')
 df_info = df_info[['Fecha', 'envios', 'llamadas']][df_info[dia]==1]
@@ -110,7 +110,7 @@ columnaB2.write('##### La media de envios en ' + diaesp + ' es: ' + str(df_info[
 if (session_state.todas):
     st.write('# Predicción llamadas contact center')
     
-    df_calls = getCallData('xxxxxxxxxxxxxx')
+    df_calls = getCallData()
     df_shippings = getDataEnvios(session_state.df_shipping)
     print('Haciendo join de los datos')
     df = dataJoin(df_calls, df_shippings)
@@ -125,7 +125,6 @@ if (session_state.todas):
     prediction = '**_ '+ str(int(prediction.round(0))) +' _**'
     
     st.write('Para el dia ' + fecha + ' se recibirá un total de '+ totalEnvios + ' envios y se preveen un total de ' + prediction + ' llamadas')
-    # st.write('El dia ' + str(dtoday.day) + '/' + str(dtoday.month) + '/' + str(dtoday.year) + ' se esperan: ' + str(prediction) + ' llamadas')
 
 with st.sidebar:
     clicked = my_widget()
