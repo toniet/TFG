@@ -4,13 +4,13 @@ import streamlit as st
 import SessionState
 import datetime
 import calendar
-from  functionsTFM import getCallData
-from  functionsTFM import getDataEnvios
-from  functionsTFM import dataJoin
-from  functionsTFM import dataEngineering
-from  functionsTFM import dataScaler
-from  functionsTFM import dataPredict
-from  functionsTFM import getTendencia
+from  functionsTFG import getCallData
+from  functionsTFG import getDataEnvios
+from  functionsTFG import dataJoin
+from  functionsTFG import dataEngineering
+from  functionsTFG import dataScaler
+from  functionsTFG import dataPredict
+from  functionsTFG import getTendencia
 
 #st.set_page_config(layout="wide")
 
